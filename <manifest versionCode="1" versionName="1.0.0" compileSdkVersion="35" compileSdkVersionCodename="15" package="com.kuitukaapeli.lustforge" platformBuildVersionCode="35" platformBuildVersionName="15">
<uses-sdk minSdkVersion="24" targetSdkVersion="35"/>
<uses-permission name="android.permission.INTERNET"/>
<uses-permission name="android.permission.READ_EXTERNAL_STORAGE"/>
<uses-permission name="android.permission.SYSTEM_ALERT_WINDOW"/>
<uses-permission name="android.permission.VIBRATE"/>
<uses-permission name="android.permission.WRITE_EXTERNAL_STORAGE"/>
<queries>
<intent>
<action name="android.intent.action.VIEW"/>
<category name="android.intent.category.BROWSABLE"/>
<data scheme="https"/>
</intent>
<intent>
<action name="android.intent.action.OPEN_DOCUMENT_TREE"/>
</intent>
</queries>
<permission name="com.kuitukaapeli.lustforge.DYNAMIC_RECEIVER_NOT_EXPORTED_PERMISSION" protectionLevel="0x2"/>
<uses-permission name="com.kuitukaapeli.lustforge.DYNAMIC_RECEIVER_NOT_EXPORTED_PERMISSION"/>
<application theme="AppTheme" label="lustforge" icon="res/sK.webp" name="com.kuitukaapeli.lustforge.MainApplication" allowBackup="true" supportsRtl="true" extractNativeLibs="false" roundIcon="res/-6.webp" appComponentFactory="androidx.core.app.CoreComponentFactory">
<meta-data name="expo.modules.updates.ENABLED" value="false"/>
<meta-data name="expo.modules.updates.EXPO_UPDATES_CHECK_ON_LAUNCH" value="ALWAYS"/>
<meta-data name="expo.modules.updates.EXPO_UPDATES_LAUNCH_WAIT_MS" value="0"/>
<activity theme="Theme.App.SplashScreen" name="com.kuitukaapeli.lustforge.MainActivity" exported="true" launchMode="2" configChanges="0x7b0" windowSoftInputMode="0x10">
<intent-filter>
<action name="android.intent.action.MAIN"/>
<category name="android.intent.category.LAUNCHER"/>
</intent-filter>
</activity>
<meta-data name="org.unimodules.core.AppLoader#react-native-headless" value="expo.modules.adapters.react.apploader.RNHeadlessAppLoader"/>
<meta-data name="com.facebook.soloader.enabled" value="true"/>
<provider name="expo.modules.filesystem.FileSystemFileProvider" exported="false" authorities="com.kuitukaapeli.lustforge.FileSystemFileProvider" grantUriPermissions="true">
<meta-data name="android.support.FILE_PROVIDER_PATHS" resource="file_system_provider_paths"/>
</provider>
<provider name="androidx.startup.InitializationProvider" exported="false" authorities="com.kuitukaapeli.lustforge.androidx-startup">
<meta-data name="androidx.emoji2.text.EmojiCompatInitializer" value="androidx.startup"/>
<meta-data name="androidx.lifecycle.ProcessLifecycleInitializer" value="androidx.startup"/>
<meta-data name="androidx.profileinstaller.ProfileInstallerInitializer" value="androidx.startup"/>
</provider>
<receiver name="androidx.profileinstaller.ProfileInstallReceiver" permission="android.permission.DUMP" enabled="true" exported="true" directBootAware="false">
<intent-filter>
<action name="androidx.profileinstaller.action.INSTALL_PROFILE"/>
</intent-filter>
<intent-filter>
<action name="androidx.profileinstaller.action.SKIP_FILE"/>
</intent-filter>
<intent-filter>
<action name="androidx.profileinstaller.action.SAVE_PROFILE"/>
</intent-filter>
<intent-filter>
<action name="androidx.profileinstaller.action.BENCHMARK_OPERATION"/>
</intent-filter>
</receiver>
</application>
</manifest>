@@ -1,0 +1,55 @@
+<manifest versionCode="1" versionName="1.0.0" compileSdkVersion="35" compileSdkVersionCodename="15" package="com.kuitukaapeli.lustforge" platformBuildVersionCode="35" platformBuildVersionName="15">
+<uses-sdk minSdkVersion="24" targetSdkVersion="35"/>
+<uses-permission name="android.permission.INTERNET"/>
+<uses-permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+<uses-permission name="android.permission.VIBRATE"/>
+<uses-permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<queries>
+<intent>
+<action name="android.intent.action.VIEW"/>
+<category name="android.intent.category.BROWSABLE"/>
+<data scheme="https"/>
+</intent>
+<intent>
+<action name="android.intent.action.OPEN_DOCUMENT_TREE"/>
+</intent>
+</queries>
+<permission name="com.kuitukaapeli.lustforge.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" protectionLevel="0x2"/>
+<uses-permission name="com.kuitukaapeli.lustforge.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+<application theme="AppTheme" label="lustforge" icon="res/sK.webp" name="com.kuitukaapeli.lustforge.MainApplication" allowBackup="true" supportsRtl="true" extractNativeLibs="false" roundIcon="res/-6.webp" appComponentFactory="androidx.core.app.CoreComponentFactory">
+<meta-data name="expo.modules.updates.ENABLED" value="false"/>
+<meta-data name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH" value="ALWAYS"/>
+<meta-data name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS" value="0"/>
+<activity theme="Theme.App.SplashScreen" name="com.kuitukaapeli.lustforge.MainActivity" exported="true" launchMode="2" configChanges="0x7b0" windowSoftInputMode="0x10">
+<intent-filter>
+<action name="android.intent.action.MAIN"/>
+<category name="android.intent.category.LAUNCHER"/>
+</intent-filter>
+</activity>
+<meta-data name="org.unimodules.core.AppLoader#react-native-headless" value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader"/>
+<meta-data name="com.facebook.soloader.enabled" value="true"/>
+<provider name="expo.modules.filesystem.FileSystemFileProvider" exported="false" authorities="com.kuitukaapeli.lustforge.FileSystemFileProvider" grantUriPermissions="true">
+<meta-data name="android.support.FILE_PROVIDER_PATHS" resource="file_system_provider_paths"/>
+</provider>
+<provider name="androidx.startup.InitializationProvider" exported="false" authorities="com.kuitukaapeli.lustforge.androidx-startup">
+<meta-data name="androidx.emoji2.text.EmojiCompatInitializer" value="androidx.startup"/>
+<meta-data name="androidx.lifecycle.ProcessLifecycleInitializer" value="androidx.startup"/>
+<meta-data name="androidx.profileinstaller.ProfileInstallerInitializer" value="androidx.startup"/>
+</provider>
+<receiver name="androidx.profileinstaller.ProfileInstallReceiver" permission="android.permission.DUMP" enabled="true" exported="true" directBootAware="false">
+<intent-filter>
+<action name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+</intent-filter>
+<intent-filter>
+<action name="androidx.profileinstaller.action.SKIP_FILE"/>
+</intent-filter>
+<intent-filter>
+<action name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+</intent-filter>
+<intent-filter>
+<action name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+</intent-filter>
+</receiver>
+</application>
+</manifest>
